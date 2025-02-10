@@ -28,7 +28,6 @@ export default async function connectRabbitMQ() {
 
         spinner.start('Creando Colas en RabbitMQ...');
         await channel.assertQueue(config.queue, { durable: true });// Crea la cola Q0
-        await channel.assertQueue(config.queueErrors, { durable: true });// Crea la cola Errores_Data
 
         spinner.succeed('Colas creadas en RabbitMQ');
         
