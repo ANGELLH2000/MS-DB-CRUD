@@ -32,7 +32,7 @@ jobs:
             --cpu=1 \
             --memory=512Mi \
             --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI
-jobs:
+
   deploy-u-conversacion:
     name: Deploy u-conversacion-228911
     runs-on: ubuntu-latest
