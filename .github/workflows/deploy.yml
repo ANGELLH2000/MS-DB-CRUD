@@ -1,0 +1,35 @@
+name: Deploy Microservices:DB-CRUD to Cloud Run
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-u-costos:
+    name: Deploy u-costos-876701
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0.2.0
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          service_account_key: ${{ secrets.GCP_SA_KEY }}}
+          export_default_credentials: true
+      - name: Deploy to Cloud Run
+        env:
+          AMQP_URL: ${{ secrets.AMQP_URL }}
+          PUERTO: ${{ secrets.PUERTO }}
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+        run: |
+          gcloud run deploy u-costos \
+            --source ./u-costos \
+            --platform managed \
+            --region us-central1 \
+            --allow-unauthenticated \
+            --min-instances=0 \
+            --cpu=1 \
+            --memory=512Mi \
+            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI
+
