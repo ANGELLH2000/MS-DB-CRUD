@@ -13,7 +13,6 @@ export default async function services(data) {
 
     // Esquema de la colección
     const chatSchema = new mongoose.Schema({
-        id_chat: mongoose.Schema.Types.ObjectId,
         chat: [{
             emisor: { type: String, required: true },
             message: { type: String, required: true }

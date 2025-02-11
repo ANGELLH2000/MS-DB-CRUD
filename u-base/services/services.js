@@ -26,7 +26,6 @@ export default async function services(data) {
 
     // Esquema de la colección
     const chatSchema = new mongoose.Schema({
-        id_chat: { type: mongoose.Schema.Types.ObjectId, required: true },
         genero: { type: [String], required: true },
         titulo: { type: [String], required: true },
         autores: { type: [String], required: true },
