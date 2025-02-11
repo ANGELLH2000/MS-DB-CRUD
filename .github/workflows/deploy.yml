@@ -28,7 +28,7 @@ jobs:
             --platform managed \
             --region us-central1 \
             --allow-unauthenticated \
-            --min-instances=0 \
+            --min-instances=1 \
             --cpu=1 \
             --memory=512Mi \
             --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI
@@ -54,7 +54,7 @@ jobs:
             --platform managed \
             --region us-central1 \
             --allow-unauthenticated \
-            --min-instances=0 \
+            --min-instances=1 \
             --cpu=1 \
             --memory=512Mi \
             --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI
@@ -80,7 +80,7 @@ jobs:
             --platform managed \
             --region us-central1 \
             --allow-unauthenticated \
-            --min-instances=0 \
+            --min-instances=1 \
             --cpu=1 \
             --memory=512Mi \
             --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI
