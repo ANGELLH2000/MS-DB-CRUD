@@ -61,10 +61,8 @@ async function main() {
                         { correlationId: message.properties.correlationId }
                     );
                     console.log("✅ Datos guardados y confirmación enviada");
-                    channel.ack(message)
-                } else {
-                    channel.nack(message)
                 }
+                channel.ack(message)
 
             } catch (error) {
                 if (error instanceof CreateError) {
