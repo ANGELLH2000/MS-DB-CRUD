@@ -1,6 +1,6 @@
 import Chalk from 'chalk';
 import ora from 'ora';
-import { ConnectionMongoError, ConnectionRabbitMQError, ConnectionServerError, UpdateError } from './utils/error.js';
+import { ConnectionMongoError, ConnectionRabbitMQError, ConnectionServerError, ReadError } from './utils/error.js';
 import connectDB from './connections/mongo.js';
 import connectRabbitMQ from './connections/amqp.js';
 import config from './config/config.js';
@@ -53,19 +53,20 @@ async function main() {
             antennaSpinner.stopAndPersist({ symbol: '📩', text: `Mensaje recibido en la cola: ${config.queue}` });
             try {
                 const data = JSON.parse(message.content.toString());
-                channel.ack(message)
+                channel.ack(message);
                 const res = await services(data);
+                console.log(res)
                 if (res) {
-                    const confirmation = { success: true, message: "Datos guardados correctamente" };
+                    const confirmation = { success: true, message: "Documento encontrado correctamente", data:res};
                     channel.sendToQueue(message.properties.replyTo,
                         Buffer.from(JSON.stringify(confirmation)),
                         { correlationId: message.properties.correlationId }
                     );
-                    console.log("✅ Datos guardados y confirmación enviada");
+                    console.log("✅ Documento encontrado y confirmación enviada");
                 }
 
             } catch (error) {
-                if (error instanceof UpdateError) {
+                if (error instanceof ReadError) {
                     await ApiErrors(error);
                     spinner.fail(error.message_error)
                     const msg_confirmation = { success: false, message: error.message_error };

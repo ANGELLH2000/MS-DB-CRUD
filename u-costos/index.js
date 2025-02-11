@@ -53,6 +53,7 @@ async function main() {
             antennaSpinner.stopAndPersist({ symbol: '📩', text: `Mensaje recibido en la cola: ${config.queue}` });
             try {
                 const data = JSON.parse(message.content.toString());
+                channel.ack(message)
                 const res = await services(data);
                 if (res) {
                     const confirmation = { success: true, message: "Datos guardados correctamente" };
@@ -62,7 +63,6 @@ async function main() {
                     );
                     console.log("✅ Datos guardados y confirmación enviada");
                 } 
-                channel.ack(message)
 
             } catch (error) {
                 if (error instanceof UpdateError) {

@@ -1,0 +1,22 @@
+{
+  "name": "r-base",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "description": "",
+  "dependencies": {
+    "amqplib": "^0.10.5",
+    "chalk": "^5.4.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "luxon": "^3.5.0",
+    "mongoose": "^8.9.5",
+    "ora": "^8.2.0"
+  }
+}
