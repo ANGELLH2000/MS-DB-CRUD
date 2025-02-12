@@ -208,7 +208,7 @@ jobs:
           gcloud run deploy r-costos \
             --source ./r-costos \
             --platform managed \
-            --region us-central1 \
+            --region us-east1 \
             --allow-unauthenticated \
             --min-instances=1 \
             --cpu=1 \
@@ -235,7 +235,7 @@ jobs:
           gcloud run deploy r-conversacion \
             --source ./r-conversacion \
             --platform managed \
-            --region us-central1 \
+            --region us-east1 \
             --allow-unauthenticated \
             --min-instances=1 \
             --cpu=1 \
