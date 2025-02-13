@@ -21,7 +21,12 @@ export default async function startServer() {
         spinner.succeed('Servidor iniciado');
         app.get('/', (req, res) => {
             //res.redirect('https://www.google.com');
-            res.send(`${config.nameMicroservice} esta corriendo en cloud run`);
+            res.send(
+                `
+                ${config.nameMicroservice} esta corriendo en cloud run.
+                Los Errores se mandan a : ${config.hostApiErrors}
+                    `
+                );
         });
 
         app.listen(config.port, () => {

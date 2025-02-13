@@ -21,6 +21,7 @@ jobs:
         env:
           AMQP_URL: ${{ secrets.AMQP_URL }}
           PUERTO: ${{ secrets.PUERTO }}
+          HOST_API_ERRORS: ${{ secrets.HOST_API_ERRORS }}
           MONGO_URI: ${{ secrets.MONGO_URI }}
         run: |
           gcloud run deploy u-costos \
@@ -31,7 +32,7 @@ jobs:
             --min-instances=1 \
             --cpu=1 \
             --memory=512Mi \
-            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI
+            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI,HOST_API_ERRORS=$HOST_API_ERRORS
   deploy-u-conversacion:
     name: Deploy u-conversacion-228911
     runs-on: ubuntu-latest
@@ -47,6 +48,7 @@ jobs:
         env:
           AMQP_URL: ${{ secrets.AMQP_URL }}
           PUERTO: ${{ secrets.PUERTO }}
+          HOST_API_ERRORS: ${{ secrets.HOST_API_ERRORS }}
           MONGO_URI: ${{ secrets.MONGO_URI }}
         run: |
           gcloud run deploy u-conversacion \
@@ -57,7 +59,7 @@ jobs:
             --min-instances=1 \
             --cpu=1 \
             --memory=512Mi \
-            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI
+            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI,HOST_API_ERRORS=$HOST_API_ERRORS
   deploy-u-base:
     name: Deploy u-base-870666
     runs-on: ubuntu-latest
@@ -73,6 +75,7 @@ jobs:
         env:
           AMQP_URL: ${{ secrets.AMQP_URL }}
           PUERTO: ${{ secrets.PUERTO }}
+          HOST_API_ERRORS: ${{ secrets.HOST_API_ERRORS }}
           MONGO_URI: ${{ secrets.MONGO_URI }}
         run: |
           gcloud run deploy u-base \
@@ -83,7 +86,7 @@ jobs:
             --min-instances=1 \
             --cpu=1 \
             --memory=512Mi \
-            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI
+            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI,HOST_API_ERRORS=$HOST_API_ERRORS
   deploy-c-costos:
     name: Deploy c-costos-897646
     runs-on: ubuntu-latest
@@ -99,6 +102,7 @@ jobs:
         env:
           AMQP_URL: ${{ secrets.AMQP_URL }}
           PUERTO: ${{ secrets.PUERTO }}
+          HOST_API_ERRORS: ${{ secrets.HOST_API_ERRORS }}
           MONGO_URI: ${{ secrets.MONGO_URI }}
         run: |
           gcloud run deploy c-costos \
@@ -109,7 +113,7 @@ jobs:
             --min-instances=1 \
             --cpu=1 \
             --memory=512Mi \
-            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI
+            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI,HOST_API_ERRORS=$HOST_API_ERRORS
   deploy-c-base:
     name: Deploy c-base-295319
     runs-on: ubuntu-latest
@@ -125,6 +129,7 @@ jobs:
         env:
           AMQP_URL: ${{ secrets.AMQP_URL }}
           PUERTO: ${{ secrets.PUERTO }}
+          HOST_API_ERRORS: ${{ secrets.HOST_API_ERRORS }}
           MONGO_URI: ${{ secrets.MONGO_URI }}
         run: |
           gcloud run deploy c-base \
@@ -135,7 +140,7 @@ jobs:
             --min-instances=1 \
             --cpu=1 \
             --memory=512Mi \
-            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI
+            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI,HOST_API_ERRORS=$HOST_API_ERRORS
   deploy-c-conversacion:
     name: Deploy c-conversacion-810688
     runs-on: ubuntu-latest
@@ -151,6 +156,7 @@ jobs:
         env:
           AMQP_URL: ${{ secrets.AMQP_URL }}
           PUERTO: ${{ secrets.PUERTO }}
+          HOST_API_ERRORS: ${{ secrets.HOST_API_ERRORS }}
           MONGO_URI: ${{ secrets.MONGO_URI }}
         run: |
           gcloud run deploy c-conversacion \
@@ -161,7 +167,7 @@ jobs:
             --min-instances=1 \
             --cpu=1 \
             --memory=512Mi \
-            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI
+            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI,HOST_API_ERRORS=$HOST_API_ERRORS
   deploy-r-base:
     name: Deploy r-base-123113
     runs-on: ubuntu-latest
@@ -177,6 +183,7 @@ jobs:
         env:
           AMQP_URL: ${{ secrets.AMQP_URL }}
           PUERTO: ${{ secrets.PUERTO }}
+          HOST_API_ERRORS: ${{ secrets.HOST_API_ERRORS }}
           MONGO_URI: ${{ secrets.MONGO_URI }}
         run: |
           gcloud run deploy r-base \
@@ -187,7 +194,7 @@ jobs:
             --min-instances=1 \
             --cpu=1 \
             --memory=512Mi \
-            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI
+            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI,HOST_API_ERRORS=$HOST_API_ERRORS
   deploy-r-costos:
     name: Deploy r-costos-293424
     runs-on: ubuntu-latest
@@ -203,6 +210,7 @@ jobs:
         env:
           AMQP_URL: ${{ secrets.AMQP_URL }}
           PUERTO: ${{ secrets.PUERTO }}
+          HOST_API_ERRORS: ${{ secrets.HOST_API_ERRORS }}
           MONGO_URI: ${{ secrets.MONGO_URI }}
         run: |
           gcloud run deploy r-costos \
@@ -213,7 +221,7 @@ jobs:
             --min-instances=1 \
             --cpu=1 \
             --memory=512Mi \
-            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI
+            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI,HOST_API_ERRORS=$HOST_API_ERRORS
 
   deploy-r-conversacion:
     name: Deploy r-conversacion-326379
@@ -230,6 +238,7 @@ jobs:
         env:
           AMQP_URL: ${{ secrets.AMQP_URL }}
           PUERTO: ${{ secrets.PUERTO }}
+          HOST_API_ERRORS: ${{ secrets.HOST_API_ERRORS }}
           MONGO_URI: ${{ secrets.MONGO_URI }}
         run: |
           gcloud run deploy r-conversacion \
@@ -240,4 +249,4 @@ jobs:
             --min-instances=1 \
             --cpu=1 \
             --memory=512Mi \
-            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI
+            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI,HOST_API_ERRORS=$HOST_API_ERRORS
