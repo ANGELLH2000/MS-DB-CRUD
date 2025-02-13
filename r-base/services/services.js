@@ -18,7 +18,7 @@ export default async function services(data) {
         tema_principal: { type: [String], default: [] },
         ambientacion: { type: [String], default: [] },
         contexto_emocional: { type: [String], default: [] },
-        hojas: { type: [Number], default: [] },
+        hojas: { type: [String], default: [] },
         gpt: { type: String,default: "" },
         nivel1: { type: String, default: "" },
         nivel2: { type: String, default: "" },
